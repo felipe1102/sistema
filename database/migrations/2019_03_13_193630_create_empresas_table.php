@@ -15,6 +15,14 @@ class CreateEmpresasTable extends Migration
     {
         Schema::create('empresas', function (Blueprint $table) {
             $table->bigIncrements('id');
+
+            $table->integer('id_endereco')->nullable()->unsigned();
+            $table->foreign('id_endereco')->references('id')->on('enderecos');
+
+            $table->string('nome');
+            $table->integer('cnpj');
+            $table->string('telefone_fixo');
+            $table->string('telefone_celular');
             $table->timestamps();
         });
     }
