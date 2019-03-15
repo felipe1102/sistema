@@ -32,6 +32,7 @@ class CreatePessoasTable extends Migration
             $table->integer('telefone_fixo');
             $table->integer('telefone_celular');
             $table->string('url_foto');
+            $table->boolean('ativo', true);
             $table->text('descricao');
 
 
