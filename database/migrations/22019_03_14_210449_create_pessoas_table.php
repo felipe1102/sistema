@@ -16,13 +16,13 @@ class CreatePessoasTable extends Migration
         Schema::create('pessoas', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->integer('id_endereco')->nullable()->unsigned();
+            $table->unsignedBigInteger('id_endereco')->nullable();
             $table->foreign('id_endereco')->references('id')->on('enderecos');
 
-            $table->integer('id_empresa')->nullable()->unsigned();
+            $table->unsignedBigInteger('id_empresa')->nullable();
             $table->foreign('id_empresa')->references('id')->on('empresas');
 
-            $table->integer('id_tipo')->nullable()->unsigned();
+            $table->unsignedBigInteger('id_tipo')->nullable();
             $table->foreign('id_tipo')->references('id')->on('tipo_pessoas');
 
             $table->string('nome');
@@ -32,7 +32,7 @@ class CreatePessoasTable extends Migration
             $table->integer('telefone_fixo');
             $table->integer('telefone_celular');
             $table->string('url_foto');
-            $table->string('descricao');
+            $table->text('descricao');
 
 
 

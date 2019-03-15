@@ -16,7 +16,7 @@ class CreateTipoPessoasTable extends Migration
         Schema::create('tipo_pessoas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('descricao');
+            $table->text('descricao');
             $table->timestamps();
         });
     }
