@@ -22,7 +22,7 @@ class CreateUsuariosTable extends Migration
             $table->foreign('id_pessoa')->references('id')->on('pessoas');
 
             $table->string('nome');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('senha');
             $table->rememberToken();
